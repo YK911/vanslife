@@ -9,7 +9,7 @@ export default function Header() {
             #VANLIFE
           </Link>
           <ul className="d-flex m-0 p-0">
-            <li className="mx-1">
+            <li className="mx-3">
               <Link className="d-block py-3" to="/about">
                 About
               </Link>
