@@ -1,0 +1,27 @@
+// Import all of Bootstrap's CSS
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import "bootstrap/scss/bootstrap";
+
+:root {
+  --bs-font-sans-serif: "Inter";
+  --bs-body-bg: #fff7ed;
+  --bs-link-color-rgb: #4d4d4d;
+  --bs-link-hover-color-rgb: #161616;
+}
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+ul,
+ol {
+  list-style-type: none;
+}
+
+#main-home {
+  background-image: url("/src/assets/home-hero.jpg");
+  background-position: center;
+  background-size: cover;
+}
