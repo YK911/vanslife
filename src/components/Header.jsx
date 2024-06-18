@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
+  const activeStyles = { textDecoration: "underline" };
+
   return (
     <header>
       <div className="container">
@@ -10,14 +12,31 @@ export default function Header() {
           </Link>
           <ul className="d-flex m-0 p-0">
             <li className="mx-3">
-              <Link className="d-block py-3" to="/about">
+              <NavLink
+                className="d-block py-3"
+                style={({ isActive }) => (isActive ? activeStyles : null)}
+                to="/host"
+              >
+                Host
+              </NavLink>
+            </li>
+            <li className="mx-3">
+              <NavLink
+                className="d-block py-3"
+                to="/about"
+                style={({ isActive }) => (isActive ? activeStyles : null)}
+              >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="mx-1">
-              <Link className="d-block py-3" to="/vans">
+              <NavLink
+                className="d-block py-3"
+                to="/vans"
+                style={({ isActive }) => (isActive ? activeStyles : null)}
+              >
                 Vans
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

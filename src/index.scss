@@ -19,12 +19,16 @@ a {
   text-decoration: none;
 
   &:hover {
+    // text-decoration: underline;
+  }
+  &.active {
     text-decoration: underline;
   }
 }
 ul,
 ol {
   list-style-type: none;
+  padding: 0;
 }
 
 #main-home {

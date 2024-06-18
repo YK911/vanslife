@@ -1,20 +1,19 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { Header, Footer } from "../components";
 
 function VanDetails() {
   const { id } = useParams();
-  const [van, setVan] = React.useState([]);
+  const [van, setVan] = React.useState(null);
+
   React.useEffect(() => {
     fetch(`/api/vans/${id}`)
       .then((res) => res.json())
       .then((data) => setVan(data.vans));
-  }, []);
+  }, [id]);
 
   return (
-    <>
-      <Header />
-      <main>
+    <main>
+      {van ? (
         <article>
           <Link to="/vans">Back to all vans</Link>
           <img className="img-fluid" src={van.imageUrl} alt={van.title} />
@@ -29,9 +28,10 @@ function VanDetails() {
           <p>{van.description}</p>
           <button type="button">Rent this van</button>
         </article>
-      </main>
-      <Footer />
-    </>
+      ) : (
+        <h2>Loading...</h2>
+      )}
+    </main>
   );
 }
 
