@@ -15,6 +15,10 @@ $enable-cssgrid: true;
   --bs-columns: 2rem;
   --bs-gap: var(--bs-columns);
 }
+body {
+  max-width: 548px;
+  margin-inline: auto;
+}
 a {
   text-decoration: none;
 
