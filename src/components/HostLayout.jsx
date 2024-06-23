@@ -5,42 +5,36 @@ function HostLayout() {
 
   return (
     <main>
-      <ul className="d-flex align-items-center column-gap-3">
-        <li>
-          <NavLink
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-            to="/host"
-            end
-          >
-            Dashboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-            to="/host/income"
-          >
-            Income
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-            to="/host/vans"
-          >
-            Vans
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/host/reviews"
-            style={({ isActive }) => (isActive ? activeStyles : null)}
-          >
-            Reviews
-          </NavLink>
-        </li>
-      </ul>
+      <div className="container d-flex align-items-center column-gap-3 py-4">
+        <NavLink
+          style={({ isActive }) => (isActive ? activeStyles : null)}
+          to="."
+          end
+        >
+          Dashboard
+        </NavLink>
 
+        <NavLink
+          style={({ isActive }) => (isActive ? activeStyles : null)}
+          to="income"
+        >
+          Income
+        </NavLink>
+
+        <NavLink
+          style={({ isActive }) => (isActive ? activeStyles : null)}
+          to="vans"
+        >
+          Vans
+        </NavLink>
+
+        <NavLink
+          to="reviews"
+          style={({ isActive }) => (isActive ? activeStyles : null)}
+        >
+          Reviews
+        </NavLink>
+      </div>
       <Outlet />
     </main>
   );
